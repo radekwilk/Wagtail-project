@@ -1,0 +1,76 @@
+{% load static wagtailuserbar %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title %}
+        {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+        {% with self.get_site.site_name as site_name %}
+        {% if site_name %}- {{ site_name }}{% endif %}
+        {% endwith %}
+        {% endblock %}
+    </title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {# Global stylesheets #}
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sevendays.css' %}">
+
+    {% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    {% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %} ">
+    {% wagtailuserbar %}
+    <nav class="nav w-full relative">
+        {% block navigation %}{% endblock navigation%}
+    </nav>
+
+    <!-- section with hero background and tagline -->
+    {% block hero_section %}{% endblock hero_section %}
+
+    <!-- Videos section -->
+    {% block content %}{% endblock %}
+
+    <!-- Advert banner -->
+    {% block adv_banner %}{% endblock adv_banner %}
+
+    <!-- News section -->
+    {% block news_section %}{% endblock news_section %}
+
+    <!-- Matches dashboard section -->
+    {% block matches_dashboard %}{% endblock matches_dashboard %}
+
+    <!-- Featured videos section -->
+    {% block featured_videos %}{% endblock featured_videos %}
+
+    <footer>
+        {% if settings.site_settings.SocialMediaSettings.instagram %}
+        <a href="{{ settings.site_settings.SocialMediaSettings.instagram }}">
+            Instagram
+        </a>
+        {% endif %}
+    </footer>
+
+
+    {# Moment.js javascript #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+    {# Global javascript #}
+    <script type="text/javascript" src="{% static 'js/sevendays.js' %}"></script>
+
+    {% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+    {% endblock %}
+</body>
+
+</html>

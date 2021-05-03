@@ -1,0 +1,557 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+
+{% block navigation %}
+
+{% image page.logo_image fill-300x300 as logo %}
+{% image page.sponsor1.image max-320x200 as sponsor1 %}
+{% image page.sponsor2.image max-320x200 as sponsor2 %}
+
+<div class="nav-top flex items-center justify-between flex-wrap p-6 w-full">
+    <div class="flex items-center flex-shrink-0 text-white mr-6 absolute top-12 left-4 rounded-full">
+        <img src="{{ logo.url }}" alt="logo.alt">
+    </div>
+    <div class="block lg:hidden">
+        <button
+            class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+        </button>
+    </div>
+    <!-- TOP NAVIGATION -->
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide">
+        <div class="w-9/12 text-lg uppercase text-white flex justify-center">
+            <a href="#" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
+                About chelsea
+            </a>
+            <a href="#" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
+                Stamford Bridge
+            </a>
+            <a href="#" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
+                Fans
+            </a>
+            <a href="#responsive-header" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 ">
+                Junior blues
+            </a>
+        </div>
+        <div>
+            <ul class="nav-link inline-block flex justify-evenly font-thin">
+                <li class="nav-items px-6">
+                    <img src="{{ sponsor1.url }}" alt="{{ sponsor1.alt }}" class="sponsor-logo">
+                </li>
+                <li class="nav-items px-6">
+                    <img src="{{ sponsor2.url }}" alt="{{ sponsor2.alt }}" class="sponsor-logo">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END OF TOP NAVIGATION -->
+</div>
+
+<!-- BOTTOM NAVIGATION -->
+<div class="nav-bottom flex items-center justify-between flex-wrap pt-3 pb-8 w-full">
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide">
+        <div class="w-6/12 ml-60 text-sm uppercase text-white flex justify-start">
+            <a href="#responsive-header"
+                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                News
+            </a>
+            <a href="#responsive-header"
+                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                Videos
+            </a>
+            <a href="#responsive-header"
+                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                Matches
+            </a>
+            <a href="#responsive-header"
+                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                Teams
+            </a>
+            <a href="#responsive-header"
+                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                Tickets & membership
+            </a>
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 nav-bottom-link">
+                Shop
+                <i class='bx bxs-shopping-bags'></i>
+            </a>
+        </div>
+        <div class="ml-12">
+            <ul class="nav-link inline-block flex justify-evenly font-thin text-sm text-gray-100">
+                <li class="nav-bottom-link nav-bottom-link-right opacity-80 mr-4 px-6 cursor-pointer">
+                    <i class='bx bx-search-alt-2 text-xl align-middle'></i>
+                </li>
+                <li class="nav-bottom-link nav-bottom-link-right border-l border-r border-gray-50 px-6">
+                    <a href="/admin" target="_blank" class="uppercase mr-4 opacity-80">LOGIN</a>
+                </li>
+                <li class="nav-bottom-link nav-bottom-link-right px-6">
+                    <a href="#" class="uppercase opacity-80">Join us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END OF BOTTOM NAVIGATION -->
+
+{% endblock %}
+
+{% block hero_section %}
+{% image page.bg_image original as bg_img %}
+<div class="content w-full h-screen" style="background: 
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4))
+        ,url({{ bg_img.url }});">
+
+    <div class="banner absolute bottom-48 left-6 w-11/12 mx-auto text-white text-6xl font-semibold">
+        {{ page.banner_title }}
+    </div>
+</div>
+{% endblock hero_section %}
+
+{% block content %}
+<div class="main-content w-full">
+    <!-- Cards wrapper -->
+    <div class="cards-wrapper flex flex-col justify-center items-center w-9/12 mx-auto bg-white py-8 px-4">
+        <!-- Cards container -->
+        <div class="cards-container w-full flex mb-6">
+            {% image page.card_image_1 original as card_img_1 %}
+            {% image page.card_image_2 original as card_img_2 %}
+            {% image page.card_image_3 original as card_img_3 %}
+
+            <!-- Single card -->
+            <div class="card w-2/6 relative">
+                <img src="{{ card_img_1.url }}" alt="{{ card_img_1.alt }}" class="card-img w-full">
+                <div
+                    class="card-text bottom-0 left-0 absolute w-full h-16 flex justify-center items-center text-lg text-white p-4">
+                    {{ page.card_title_1 }}
+                    <div
+                        class="card-play-btn bottom-0 right-0 absolute h-8 w-8 flex justify-center items-center text-lg text-white cursor-pointer">
+                        <i class='bx bx-play'></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Single card -->
+
+            <!-- Single card -->
+            <div class="card w-2/6 relative mx-1">
+                <img src="{{ card_img_2.url }}" alt="{{ card_img_2.alt }}" class="card-img w-full">
+                <div
+                    class="card-text bottom-0 left-0 absolute w-full h-16 flex justify-center items-center text-lg text-white p-4">
+                    {{ page.card_title_2 }}
+                    <div
+                        class="card-play-btn bottom-0 right-0 absolute h-8 w-8 flex justify-center items-center text-lg text-white cursor-pointer">
+                        <i class='bx bx-play '></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Single card -->
+
+            <!-- Single card -->
+            <div class="card w-2/6 relative">
+                <img src="{{ card_img_3.url }}" alt="{{ card_img_3.alt }}" class="card-img w-full">
+                <div
+                    class="card-text bottom-0 left-0 absolute w-full h-16 flex justify-center items-center text-lg text-white p-4">
+                    {{ page.card_title_3 }}
+                    <div
+                        class="card-play-btn bottom-0 right-0 absolute h-8 w-8 flex justify-center items-center text-lg text-white cursor-pointer">
+                        <i class='bx bx-play '></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Single card -->
+        </div>
+        <!-- End of Cards container -->
+        <button class="cards-btn bg-transparent font-semibold py-2 px-4 rounded inline-block mb-4">
+            See all videos
+        </button>
+    </div>
+    <!--End of  Cards wrapper -->
+</div>
+{% endblock content %}
+
+<!-- ADVERT BANNER -->
+{% block adv_banner %}
+{% image page.adv_banner original as adv_img %}
+<div class="w-4/5 mx-auto h-28 border-blue-300 relative -top-24">
+    <img src="{{ adv_img.url }}" alt="{{ adv_img.alt }}" class="w-full">
+</div>
+{% endblock adv_banner %}
+<!-- END OF ADVERT BANNER -->
+
+<!-- NEWS SECTION -->
+{% block news_section %}
+<section class="news-section w-full"></section>
+<h3 class="news-heading capitalize ml-9 mb-8">News</h3>
+<div class="news_section-grid w-11/12 mx-auto grid grid-cols-3 grid-rows-2 gap-7">
+    <div class="news-cell news-cell-double news-cell-img col-span-2 relative">
+        {% image page.news_post_double.image original as img_post_double %}
+        {% if page.news_post_double.post_type %}
+        <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
+            {{ page.news_post_double.post_type }}
+        </span>
+        {% endif %}
+        <img src="{{ img_post_double.url }}" alt="{{ img_post_double.alt }}">
+        <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
+
+            {{ page.news_post_double.post_title }}
+            <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs uppercase">
+                {{ page.news_post_double.date|date:"F j, Y" }}
+            </span>
+        </div>
+    </div>
+    <div class="news-cell news-cell-single news-cell-post relative ">
+        {% if page.news_post_text.post_type %}
+        <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
+            {{ page.news_post_text.post_type }}
+        </span>
+        {% endif %}
+        <h3 class="text-3xl uppercase p-2 mb-1">
+            {{ page.news_post_text.post_title }}
+        </h3>
+        <p class="text-base p-2 mb-2">
+            {{ page.news_post_text.post_text }}
+        </p>
+        <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs uppercase">
+            {{ page.news_post_text.date|date:"F j, Y" }}
+        </span>
+    </div>
+    <!-- BOTTOM NEWS GRID - LEFT SIDE -->
+    <div class="news-cell news-cell-single news-cell-img relative">
+        {% image page.news_post_left.image original as img_post_left %}
+        {% if page.news_post_left.post_type %}
+        <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
+            {{ page.news_post_left.post_type }}
+        </span>
+        {% endif %}
+        <img src="{{ img_post_left.url }}" alt="{{ img_post_left.alt }}">
+        <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
+
+            {{ page.news_post_left.post_title }}
+            <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs">
+                {{ page.news_post_left.date|date:"F j, Y" }}
+            </span>
+        </div>
+    </div>
+    <!-- END OF BOTTOM NEWS GRID - LEFT SIDE -->
+
+    <!-- BOTTOM MIDDLE COL (ADVERT) -->
+    <div class="news-cell news-cell-single news-cell-adv">
+        {% image page.adv_sport_news original as img_post_adv %}
+        <img src="{{ img_post_adv.url }}" alt="{{ img_post_adv.alt }}">
+    </div>
+    <!-- END OF BOTTOM MIDDLE COL (ADVERT) -->
+
+    <!-- BOTTOM NEWS GRID - RIGHT SIDE -->
+    <div class="news-cell news-cell-single news-cell-img relative">
+        {% image page.news_post_right.image original as img_post_right %}
+        {% if page.news_post_right.post_type %}
+        <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
+            {{ page.news_post_right.post_type }}
+        </span>
+        {% endif %}
+        <img src="{{ img_post_right.url }}" alt="{{ img_post_right.alt }}">
+        <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
+
+            {{ page.news_post_right.post_title }}
+            <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs">
+                {{ page.news_post_right.date|date:"F j, Y" }}
+            </span>
+        </div>
+
+    </div>
+    <!-- END OF BOTTOM NEWS GRID - RIGHT SIDE -->
+</div>
+<button class="cards-btn bg-transparent font-semibold py-2 px-4 rounded block mb-4 mt-8 mx-auto">
+    See all News
+</button>
+</section>
+{% endblock news_section %}
+
+{% block matches_dashboard %}
+<section class="matches_dashboard-section w-full"></section>
+<div class="matches-dashboard relative">
+    <div class="matches-dashboard-title text-4xl absolute uppercase mx-6 px-4 ">
+        Matches
+    </div>
+    <!-- Next match counter -->
+    <div class="next-match-wrapper flex justify-center mx-auto mt-4">
+        <span class="next-match-info uppercase text-white bg-red-500 px-2 mr-4">Next match </span>
+        <div class="counter text-lg">
+            <span class="counter-text counter-days">0</span> DAY(S) /
+            <span class="counter-text counter-hours">0</span> HOUR(S) /
+            <span class="counter-text counter-minutes">0</span> MINS /
+            <span class="counter-text counter-seconds">0</span> SECS
+        </div>
+    </div>
+    <div class="matches-info-wrapper">
+        {% image page.last_game_home_team.club_logo original as home_club_logo %}
+        {% image page.last_game_home_team.other_club_logo original as other_club_logo %}
+        <!-- PREVIOUS MATCH -->
+        <div
+            class="previous-match match-dashboard-details w-1/3 flex flex-col justify-between border-r-4 border-gray-300 pr-4">
+            <div class="match-details flex justify-between items-start">
+                <div class="match-details-info flex flex-col w-3/5">
+                    <p class="match-type uppercase text-sm text-blue-800 font-semibold">
+                        {{ page.last_game_home_team.match_type }}
+                    </p>
+                    <p class="match-where uppercase text-xs text-gray-500">
+                        {{ page.last_game_home_team.match_location }}
+                    </p>
+                    <p class="match-when uppercase text-xs text-gray-500">
+                        {{ page.last_game_home_team.match_date|date:"F j, Y, g:i a" }}
+                    </p>
+                </div>
+                <p class="next-match-info uppercase text-sm text-white bg-blue-600 px-2 mr-1">
+                    Last match
+                </p>
+            </div>
+            <div class="match-clubs flex flex-col my-6">
+                <!-- Home club details & score-->
+                <div class="club-names-wrapper flex justify-between">
+                    <div class="logo-name my-4 flex h-full w-9/12 items-center text-lg">
+                        <img src="{{ home_club_logo.url }}" alt="{{ home_club_logo.alt }}" width="45" class="mr-4">
+                        <p class="club-name">
+                            {{ page.last_game_home_team.club_name }}
+                        </p>
+                    </div>
+                    <span class="score text-blue-600 text-2xl">
+                        {{ page.last_game_home_team.score_home }}
+                    </span>
+                </div>
+                <!-- End of home club details & score-->
+                <!-- Away club details & score-->
+                <div class="club-names-wrapper flex justify-between align-center h-40">
+                    <div class="logo-name my-4 flex h-full w-9/12 items-center text-lg">
+                        <img src="{{ other_club_logo.url }}" alt="{{ other_club_logo.alt }}" width="45" class="mr-4">
+                        <p class="club-name">
+                            {{ page.last_game_home_team.against_name }}
+                        </p>
+                    </div>
+                    <span class="score text-blue-600 text-2xl">
+                        {{ page.last_game_home_team.score_other_team }}
+                    </span>
+                </div>
+                <!-- End of away club -->
+            </div>
+            <div class="march-info-link text-right">
+                <a href="#" class="text-blue-800 hover:text-blue-400 font-semibold uppercase">Match centre &gt;</a>
+            </div>
+        </div>
+        <!--END of PREVIOUS MATCH -->
+        <!-- NEXT MATCH -->
+        <div
+            class="previous-match match-dashboard-details w-1/3 flex flex-col justify-between border-r-4 border-gray-300 px-4">
+            {% image page.next_game_detail.club_logo original as nextgame_home_club_logo %}
+            {% image page.next_game_detail.other_club_logo original as nextgame_other_club_logo %}
+            <div class="match-details flex justify-between items-start">
+                <div class="match-details-info flex flex-col w-3/5">
+                    <p class="match-type uppercase text-sm text-blue-800 font-semibold">
+                        {{ page.next_game_detail.match_type }}
+                    </p>
+                    <p class="match-where uppercase text-xs text-gray-500">
+                        {{ page.next_game_detail.match_location }}
+                    </p>
+                    <p class="match-when uppercase text-xs text-gray-500">
+                        {{ page.next_game_detail.match_date|date:"F j, Y, g:i a" }}
+                    </p>
+                    <input type="datetime" class="hidden" id="js-next-game-date"
+                        value="{{ page.next_game_detail.match_date }}">
+                    </input>
+                </div>
+                <p class="next-match-info uppercase text-sm text-white bg-blue-600 px-2 mr-1">
+                    Next match
+                </p>
+            </div>
+            <div class="next-match-wrapper flex">
+                <!-- Clubs section -->
+                <div class="match-clubs flex flex-col my-6 w-9/12 border-r-4 border-gray-300">
+                    <!-- Home club details-->
+                    <div class="club-names-wrapper flex justify-between">
+                        <div class="logo-name my-4 flex h-full w-full items-center text-lg">
+                            <img src="{{ nextgame_home_club_logo.url }}" alt="{{ nextgame_home_club_logo.alt }}"
+                                width="45" class="mr-4">
+                            <p class="club-name">
+                                {{ page.next_game_detail.club_name }}
+                            </p>
+                        </div>
+                    </div>
+                    <!-- End of home club details-->
+                    <!-- Away club details-->
+                    <div class="club-names-wrapper flex justify-between align-center h-40">
+                        <div class="logo-name my-4 flex h-full w-full items-center text-lg">
+                            <img src="{{ nextgame_other_club_logo.url }}" alt="{{ nextgame_other_club_logo.alt }}"
+                                width="45" class="mr-4">
+                            <p class="club-name">
+                                {{ page.next_game_detail.against_name }}
+                            </p>
+                        </div>
+                    </div>
+                    <!-- End of away club -->
+                </div>
+                <!-- Clubs section -->
+                <!-- Match-date-display -->
+                <div class="match-date-display w-3/12 h-full flex flex-col justify-center items-center ">
+                    <p class="next-match-date-day text-3xl text-blue-800">
+                        {{ page.next_game_detail.match_date|date:"d" }}
+                    </p>
+                    <p class="next-match-date-day-name text-lg text-blue-800">
+                        {{ page.next_game_detail.match_date|date:"D" }}
+                    </p>
+                </div>
+                <!-- End of Match-date-display -->
+            </div>
+            <div class="march-info-link text-right">
+                <a href="#" class="text-blue-800 hover:text-blue-400 font-semibold uppercase">Match centre &gt;</a>
+            </div>
+        </div>
+        <!-- END OF NEXT MATCH -->
+        <!-- League table -->
+        <div class="league-table match-dashboard-details w-1/3 flex flex-col pl-4">
+            {% image page.league_table_team_info_pos1.team_logo original as pos1_logo %}
+            {% image page.league_table_team_info_pos2.team_logo original as pos2_logo %}
+            {% image page.league_table_team_info_pos3.team_logo original as pos3_logo %}
+            <p class="match-type uppercase text-sm text-blue-800 font-semibold max-w-max">
+                PREMIER LEAGUE 2020/2021
+            </p>
+            <!-- Table wrapper -->
+            <div class="table-wrapper w-full h-full p-4">
+                <table class="league-table w-full">
+                    <!-- Table heading -->
+                    <tr
+                        class="league-table-heading league-table-row border-t-2 border-b-2 border-gray-400 uppercase text-xs text-gray-400 font-extralight">
+                        <td class="w-8">POS</td>
+                        <td class="px-16">TEAM</td>
+                        <td class="w-8">P</td>
+                        <td class="w-8">GD</td>
+                        <td class="w-8">PTS</td>
+                    </tr>
+                    <!--End of table heading -->
+                    <tr class="row-separator h-6"></tr>
+                    <!-- First team -->
+                    <tr class="my-4">
+                        <td>
+                            {{ page.league_table_team_info_pos1.league_position }}
+                        </td>
+                        <td class="px-2 flex">
+                            <img src="{{ pos1_logo.url }}" alt="{{ pos1_logo.alt }}" width="25">
+                            <span class="capitalize ml-4">
+                                {{ page.league_table_team_info_pos1.team_name }}
+                            </span>
+                        </td>
+                        <!-- Games played -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos1.games_played }}
+                        </td>
+                        <!-- Goals difference -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos1.goals_diff }}
+                        </td>
+                        <!-- Points -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos1.points }}
+                        </td>
+                    </tr>
+                    <!-- End of first team -->
+                    <tr class="row-separator h-6"></tr>
+                    <!-- Second team -->
+                    <tr class="py-4">
+                        <td>
+                            {{ page.league_table_team_info_pos2.league_position }}
+                        </td>
+                        <td class="px-2 flex">
+                            <img src="{{ pos2_logo.url }}" alt="{{ pos2_logo.alt }}" width="25">
+                            <span class="capitalize ml-4">
+                                {{ page.league_table_team_info_pos2.team_name }}
+                            </span>
+                        </td>
+                        <!-- Games played -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos2.games_played }}
+                        </td>
+                        <!-- Goals difference -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos2.goals_diff }}
+                        </td>
+                        <!-- Points -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos2.points }}
+                        </td>
+                    </tr>
+                    <!-- End of second team -->
+                    <tr class="row-separator h-6"></tr>
+                    <!-- Third team -->
+                    <tr class="py-4">
+                        <td>
+                            {{ page.league_table_team_info_pos3.league_position }}
+                        </td>
+                        <td class="px-2 flex">
+                            <img src="{{ pos3_logo.url }}" alt="{{ pos3_logo.alt }}" width="25">
+                            <span class="capitalize ml-4">
+                                {{ page.league_table_team_info_pos3.team_name }}
+                            </span>
+                        </td>
+                        <!-- Games played -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos3.games_played }}
+                        </td>
+                        <!-- Goals difference -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos3.goals_diff }}
+                        </td>
+                        <!-- Points -->
+                        <td class="w-8">
+                            {{ page.league_table_team_info_pos3.points }}
+                        </td>
+                    </tr>
+                    <!-- End of third team -->
+                </table>
+            </div>
+            <!-- End of table wrapper -->
+            <!-- Full table view link -->
+            <div class="march-info-link text-right">
+                <a href="#" class="text-blue-800 hover:text-blue-400 font-semibold uppercase">Full table &gt;</a>
+            </div>
+            <!-- End of Full table view link -->
+        </div>
+        <!-- End of League table -->
+    </div>
+    <div class="watch-container flex items-center px-4">
+        {% image page.watch.watch_type original as img_watch %}
+        {% image page.watch.watch_image original as watch_image %}
+        {% image page.watch.watch_hrs original as watch_hrs %}
+        {% image page.watch.watch_minutes original as watch_min %}
+        {% image page.watch.watch_seconds original as watch_sec %}
+        {% image page.watch.watch_name_tag original as watch_name_tag %}
+        <div class="watch-name-wrapper mx-1">
+            <img src="{{ img_watch.url }}" alt="" class="watch-name w-full">
+        </div>
+        <div class="watch-img-wrapper relative mx-1"
+            style="background-image:url({{ watch_image.url }});background-repeat:no-repeat;background-position:center;background-size:cover;">
+            <!-- <img src="{{ watch_image.url }}" alt="" class="watch-image w-full"> -->
+            <div class="tip-handle-hr z-10">
+                <img src="{{ watch_hrs.url }}" alt="" class="watch-hrs">
+            </div>
+            <div class="tip-handle-min z-20">
+                <img src="{{ watch_min.url }}" alt="" class="watch-minutes watch-tip-position">
+            </div>
+            <div class="tip-handle-sec z-30">
+                <img src="{{ watch_sec.url }}" alt="" class="watch-seconds watch-tip-position">
+            </div>
+        </div>
+        <div class="watch-tag-wrapper mx-1">
+            <img src="{{ watch_name_tag.url }}" alt="" class="watch-name-tag w-full">
+        </div>
+    </div>
+
+</div>
+</section>
+{% endblock matches_dashboard %}
