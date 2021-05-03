@@ -355,7 +355,50 @@ footer {
 
 /*END OF MATCHES DASHBOARD */
 
+/* FEATURED VIDEO SECTION */
+.featured-video-text-wrapper {
+    transform: translate(-15%, 15%);
+}
 
+.social-list-item {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #140a47;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color 0.5s;
+}
+
+.social-list-item i {
+    color: #03f;
+    transition: color 0.5s
+}
+
+.social-list-item:hover {
+    background-color: #03f;
+}
+
+.social-list-item:hover i {
+    color: #fff;
+}
+
+.featured-video-wrapper {
+    overflow: hidden;
+}
+
+.featured-video-wrapper img {
+    transform: scale(1);
+    transition: transform 0.6s ;
+}
+
+.featured-video-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+/* END OF FEATURED VIDEO SECTION */
 
 @keyframes borderHover {
     0% {

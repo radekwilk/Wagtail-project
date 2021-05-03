@@ -176,6 +176,14 @@ class HomePage(Page):
         related_name='+',
     )
 
+    featured_video = models.ForeignKey(
+        'SportNewsPost',
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+
     content_panels = Page.content_panels + [
         ImageChooserPanel("logo_image"),
         SnippetChooserPanel("sponsor1"),
@@ -200,6 +208,7 @@ class HomePage(Page):
         SnippetChooserPanel("league_table_team_info_pos2"),
         SnippetChooserPanel("league_table_team_info_pos3"),
         SnippetChooserPanel("watch"),
+        SnippetChooserPanel("featured_video"),
     ]
 
 

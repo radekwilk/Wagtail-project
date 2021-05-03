@@ -192,6 +192,7 @@
 <section class="news-section w-full"></section>
 <h3 class="news-heading capitalize ml-9 mb-8">News</h3>
 <div class="news_section-grid w-11/12 mx-auto grid grid-cols-3 grid-rows-2 gap-7">
+    <!-- Double grid post - top row -->
     <div class="news-cell news-cell-double news-cell-img col-span-2 relative">
         {% image page.news_post_double.image original as img_post_double %}
         {% if page.news_post_double.post_type %}
@@ -208,6 +209,7 @@
             </span>
         </div>
     </div>
+    <!-- Text only news - top row -->
     <div class="news-cell news-cell-single news-cell-post relative ">
         {% if page.news_post_text.post_type %}
         <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
@@ -277,7 +279,7 @@
 {% endblock news_section %}
 
 {% block matches_dashboard %}
-<section class="matches_dashboard-section w-full"></section>
+<section class="matches_dashboard-section w-full mt-16"></section>
 <div class="matches-dashboard relative">
     <div class="matches-dashboard-title text-4xl absolute uppercase mx-6 px-4 ">
         Matches
@@ -555,3 +557,62 @@
 </div>
 </section>
 {% endblock matches_dashboard %}
+
+<!-- Featured videos section -->
+{% block featured_videos %}
+<section class="featured-videos w-full h-60 my-24 relative">
+    <h3 class="news-heading capitalize ml-9 mb-8">Featured video</h3>
+    <div class="featured-videos-wrapper flex w-11/12 mx-auto">
+        {% image page.featured_video.image original as img_video %}
+        <div class="featured-video-wrapper w-3/5 h-full relative z-10">
+            <img src="{{ img_video.url }}" alt="{{ img_video.alt }}" class="card-img w-full">
+            <div
+                class="card-play-btn bottom-0 right-0 absolute h-8 w-8 flex justify-center items-center text-lg text-white cursor-pointer">
+                <i class='bx bx-play'></i>
+            </div>
+        </div>
+        <div class="featured-video-text-wrapper news-cell-post w-3/6">
+            <div class="featured-video-text-content w-5/6 ml-auto relative">
+                <h3 class="text-3xl uppercase p-2 mb-1 ml-auto">
+                    {{ page.featured_video.post_title }}
+                </h3>
+                <p class="text-base p-2 mb-6 ml-auto">
+                    {{ page.featured_video.post_text }}
+                </p>
+                <div class="date-and-social flex justify-between p-2">
+                    <div class="news-cell-date">
+                        <span class="text-xs uppercase">
+                            {{ page.featured_video.date|date:"F j, Y" }}
+                        </span>
+                    </div>
+                    <div class="social-links">
+                        <ul class="social-list inline-block flex justify-evenly">
+                            <li class="social-list-item mr-4">
+                                <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}" class="social-link">
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                            </li>
+                            <li class="social-list-item mr-4">
+                                <a href="{{ settings.site_settings.SocialMediaSettings.twitter }}" class="social-link">
+                                    <i class='bx bxl-twitter'></i>
+                                </a>
+                            </li>
+                            <li class="social-list-item mr-4">
+                                <a href="#" class="social-link">
+                                    <i class='bx bx-link'></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock featured_videos %}
+
+<!-- Social media latest section -->
+{% block social_media %}
+
+{% endblock social_media %}
+<!-- End of Social media latest section -->
