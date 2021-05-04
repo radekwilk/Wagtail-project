@@ -886,74 +886,123 @@
 
 <!-- Sponsors display board -->
 {% block sponsors_board %}
-<section class="sponsors_board w-full py-16 bg-blue-100 my-16">
+<section class="sponsors_board w-full py-16 bg-white my-16">
+    {% image page.club_sponsors_board.main_sponsor_1 original as main_sponsor_1 %}
+    {% image page.club_sponsors_board.main_sponsor_2 original as main_sponsor_2 %}
+    {% image page.club_sponsors_board.sponsor_1 original as sponsor_1 %}
+    {% image page.club_sponsors_board.sponsor_2 original as sponsor_2 %}
+    {% image page.club_sponsors_board.sponsor_3 original as sponsor_3 %}
+    {% image page.club_sponsors_board.sponsor_4 original as sponsor_4 %}
+    {% image page.club_sponsors_board.sponsor_5 original as sponsor_5 %}
+    {% image page.club_sponsors_board.sponsor_6 original as sponsor_6 %}
+    {% image page.club_sponsors_board.sponsor_7 original as sponsor_7 %}
+    {% image page.club_sponsors_board.sponsor_8 original as sponsor_8 %}
+    {% image page.club_sponsors_board.sponsor_9 original as sponsor_9 %}
+    {% image page.club_sponsors_board.sponsor_10 original as sponsor_10 %}
+    {% image page.club_sponsors_board.sponsor_11 original as sponsor_11 %}
+    {% image page.club_sponsors_board.sponsor_12 original as sponsor_12 %}
+    {% image page.club_sponsors_board.sponsor_13 original as sponsor_13 %}
+    {% image page.club_sponsors_board.sponsor_14 original as sponsor_14 %}
+
     <div class="sponsors-logo-wrapper grid grid-cols-7 grid-rows-3 gap-x-2.5 gap-y-10 justify-center w-10/12 mx-auto">
         <!-- Top row -->
-        <div class="col-start-3 col-end-4 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="lg-sponsor-logo col-start-3 col-end-4 flex w-64">
+            <a href="#">
+                <img src="{{ main_sponsor_1.url }}" alt="{{ main_sponsor_1.alt }}">
+            </a>
         </div>
-        <div class="col-start-5 col-end-6 flex justify-center">
-            <img src="/media/images/three_-_header_-_trans.max-320x200.png" alt="">
+        <div class="lg-sponsor-logo col-start-5 col-end-6 flex w-64">
+            <a href="#">
+                <img src="{{ main_sponsor_2.url }}" alt="{{ main_sponsor_2.alt }}">
+            </a>
         </div>
         <!-- End of Top row -->
         <!-- Middle row -->
         <!-- Col 1 -->
-        <div class="col-start-1 col-end-2 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-1 col-end-2 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_1.url }}" alt="{{ sponsor_1.alt }}">
+            </a>
         </div>
         <!-- Col 2 -->
-        <div class="col-start-2 col-end-3 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-2 col-end-3 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_2.url }}" alt="{{ sponsor_2.alt }}">
+            </a>
         </div>
         <!-- Col 3 -->
-        <div class="col-start-3 col-end-4 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-3 col-end-4 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_3.url }}" alt="{{ sponsor_3.alt }}">
+            </a>
         </div>
         <!-- Col 4 -->
-        <div class="col-start-4 col-end-5 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-4 col-end-5 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_4.url }}" alt="{{ sponsor_4.alt }}">
+            </a>
         </div>
         <!-- Col 5 -->
-        <div class="col-start-5 col-end-6 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-5 col-end-6 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_5.url }}" alt="{{ sponsor_5.alt }}">
+            </a>
         </div>
         <!-- Col 6 -->
-        <div class="col-start-6 col-end-7 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-6 col-end-7 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_6.url }}" alt="{{ sponsor_6.alt }}">
+            </a>
         </div>
         <!-- Col 7 -->
-        <div class="col-start-7 col-end-8 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-7 col-end-8 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_7.url }}" alt="{{ sponsor_7.alt }}">
+            </a>
         </div>
         <!-- End of Middle row -->
         <!-- Bottom row -->
         <!-- Col 1 -->
-        <div class="col-start-1 col-end-2 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-1 col-end-2 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_8.url }}" alt="{{ sponsor_8.alt }}">
+            </a>
         </div>
         <!-- Col 2 -->
-        <div class="col-start-2 col-end-3 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-2 col-end-3 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_9.url }}" alt="{{ sponsor_9.alt }}">
+            </a>
         </div>
         <!-- Col 3 -->
-        <div class="col-start-3 col-end-4 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-3 col-end-4 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_10.url }}" alt="{{ sponsor_10.alt }}">
+            </a>
         </div>
         <!-- Col 4 -->
-        <div class="col-start-4 col-end-5 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-4 col-end-5 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_11.url }}" alt="{{ sponsor_11.alt }}">
+            </a>
         </div>
         <!-- Col 5 -->
-        <div class="col-start-5 col-end-6 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-5 col-end-6 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_12.url }}" alt="{{ sponsor_12.alt }}">
+            </a>
         </div>
         <!-- Col 6 -->
-        <div class="col-start-6 col-end-7 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-6 col-end-7 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_13.url }}" alt="{{ sponsor_13.alt }}">
+            </a>
         </div>
         <!-- Col 7 -->
-        <div class="col-start-7 col-end-8 flex justify-center ">
-            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        <div class="sm-sponsor-logo col-start-7 col-end-8 flex justify-center">
+            <a href="#">
+                <img src="{{ sponsor_14.url }}" alt="{{ sponsor_14.alt }}">
+            </a>
         </div>
         <!-- End of Bottom row -->
     </div>
