@@ -560,7 +560,7 @@
 
 <!-- Featured videos section -->
 {% block featured_videos %}
-<section class="featured-videos w-full h-60 my-24 relative">
+<section class="featured-videos w-full my-24 relative">
     <h3 class="news-heading capitalize ml-9 mb-8">Featured video</h3>
     <div class="featured-videos-wrapper flex w-11/12 mx-auto">
         {% image page.featured_video.image original as img_video %}
@@ -613,6 +613,349 @@
 
 <!-- Social media latest section -->
 {% block social_media %}
+<section class="latest-social-media w-full mt-32">
+    <h3 class="news-heading capitalize ml-9 mb-8">LATEST FROM SOCIAL</h3>
+    <!-- cards container -->
+    <div class="social-cards-container w-11/12 mx-auto flex">
+        <!-- Single card (no image) -->
+        <div
+            class="social-card w-1/4 mr-2 p-4 bg-white shadow-lg rounded-sm h-full flex flex-col justify-between relative">
+            <!-- Card heading -->
+            <div class="social-card-heading flex items-center">
+                <div class="social-card-heading-logo">
+                    <img src="/media/images/cfc-league-logo.max-165x165.png" alt="logo">
+                </div>
+                <div class="social-card-heading-text flex flex-col ml-2">
+                    <p class="heading-title uppercase text-lg text-blue-600">
+                        Chelsea FC
+                    </p>
+                    <p class="heading-handle text-xs text-gray-400 font-extralight">
+                        @ChelseaFC
+                    </p>
+                </div>
+                <div class="social-card-heading-date flex flex-col items-center w-16 ml-auto">
+                    <a href="#" class="social-card-heading-link">
+                        <i class='bx bxl-twitter text-blue-500'></i>
+                    </a>
+                    <span>29 Apr</span>
+                </div>
+            </div>
+            <!-- End of card heading -->
+            <!-- Card body -->
+            <div class="social-card-body">
+                Something needs to change.
 
+                We want social media companies to do more to prevent online discriminatory abuse. So we’re joining
+                forces with other
+                teams and organisations to boycott social media until Tuesday 4 May.
+            </div>
+            <!-- End of Card body -->
+            <!-- Hashtags -->
+            <div class="social-card-hashtags mb-12">
+                <p class="text-blue-400">
+                    #NoToHate #StopOnlineAbuse #NoRoomForRacism
+                </p>
+            </div>
+            <!-- End of Hashtags -->
+            <div class="social-card-links absolute bottom-5 left-0 w-full">
+                <ul class="social-card-list inline-block flex justify-evenly">
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bx-reply'></i>
+                        </a>
+                    </li>
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bx-repost'></i>
+                        </a>
+                    </li>
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bxs-heart'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Card footer -->
+            <div class="social-card-footer absolute bottom-0 left-0 w-full h-4 bg-blue-600">
+
+            </div>
+            <!-- End of Card footer -->
+        </div>
+        <!-- End of Single card (no image) -->
+
+        <!-- Single card (no image) -->
+        <div
+            class="social-card w-1/4 mr-2 p-4 bg-white shadow-lg rounded-sm h-full flex flex-col justify-between relative">
+            <!-- Card heading -->
+            <div class="social-card-heading flex items-center">
+                <div class="social-card-heading-logo">
+                    <img src="/media/images/cfc-league-logo.max-165x165.png" alt="logo">
+                </div>
+                <div class="social-card-heading-text flex flex-col ml-2">
+                    <p class="heading-title uppercase text-lg text-blue-600">
+                        Chelsea FC
+                    </p>
+                    <p class="heading-handle text-xs text-gray-400 font-extralight">
+                        @ChelseaFC
+                    </p>
+                </div>
+                <div class="social-card-heading-date flex flex-col items-center w-16 ml-auto">
+                    <a href="#" class="social-card-heading-link">
+                        <i class='bx bxl-twitter text-blue-500'></i>
+                    </a>
+                    <span>3 May</span>
+                </div>
+            </div>
+            <!-- End of card heading -->
+            <!-- Card body -->
+            <div class="social-card-body">
+                An important message from the boss.
+            </div>
+            <!-- End of Card body -->
+            <!-- Hashtags -->
+            <div class="social-card-hashtags mb-12">
+                <p class="text-blue-400">
+                    #NoToHate #StopOnlineAbuse #NoRoomForRacism
+                </p>
+            </div>
+            <!-- End of Hashtags -->
+            <div class="social-card-links absolute bottom-5 left-0 w-full">
+                <ul class="social-card-list inline-block flex justify-evenly">
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bx-reply'></i>
+                        </a>
+                    </li>
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bx-repost'></i>
+                        </a>
+                    </li>
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bxs-heart'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Card footer -->
+            <div class="social-card-footer absolute bottom-0 left-0 w-full h-4 bg-blue-600">
+
+            </div>
+            <!-- End of Card footer -->
+        </div>
+        <!-- End of Single card (no image) -->
+
+        <!-- Single card (with image) -->
+        <div
+            class="social-card w-1/4 mr-2 p-4 bg-white shadow-lg rounded-sm h-full flex flex-col justify-between relative">
+            <div class="social-card-img w-11/12 mx-auto">
+                <img src="/media/images/tammy.jpg" alt="">
+            </div>
+            <!-- Card heading -->
+            <div class="social-card-heading flex items-center">
+                <div class="social-card-heading-logo">
+                    <img src="/media/images/cfc-league-logo.max-165x165.png" alt="logo">
+                </div>
+                <div class="social-card-heading-text flex flex-col ml-2">
+                    <p class="heading-title uppercase text-lg text-blue-600">
+                        Chelsea FC
+                    </p>
+                    <p class="heading-handle text-xs text-gray-400 font-extralight">
+                        @ChelseaFC
+                    </p>
+                </div>
+                <div class="social-card-heading-date flex flex-col items-center w-16 ml-auto">
+                    <a href="#" class="social-card-heading-link">
+                        <i class='bx bxl-twitter text-blue-500'></i>
+                    </a>
+                    <span>4 May</span>
+                </div>
+            </div>
+            <!-- End of card heading -->
+            <!-- Card body -->
+            <div class="social-card-body">
+                You've got a friend in him
+            </div>
+            <!-- End of Card body -->
+            <!-- Hashtags -->
+            <div class="social-card-hashtags mb-12">
+                <p class="text-blue-400">
+                    @tammyabraham! 😅 pic.twitter.com/QsVJunnaNu
+                </p>
+            </div>
+            <!-- End of Hashtags -->
+            <div class="social-card-links absolute bottom-5 left-0 w-full">
+                <ul class="social-card-list inline-block flex justify-evenly">
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bx-reply'></i>
+                        </a>
+                    </li>
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bx-repost'></i>
+                        </a>
+                    </li>
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bxs-heart'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Card footer -->
+            <div class="social-card-footer absolute bottom-0 left-0 w-full h-4 bg-blue-600">
+
+            </div>
+            <!-- End of Card footer -->
+        </div>
+        <!-- End of Single card (with image) -->
+
+        <!-- Single card (with image) -->
+        <div
+            class="social-card w-1/4 mr-2 p-4 bg-white shadow-lg rounded-sm h-full flex flex-col justify-between relative">
+            <div class="social-card-img w-11/12 mx-auto">
+                <img src="/media/images/training (2).jpg" alt="">
+            </div>
+            <!-- Card heading -->
+            <div class="social-card-heading flex items-center">
+                <div class="social-card-heading-logo">
+                    <img src="/media/images/cfc-league-logo.max-165x165.png" alt="logo">
+                </div>
+                <div class="social-card-heading-text flex flex-col ml-2">
+                    <p class="heading-title uppercase text-lg text-blue-600">
+                        Chelsea FC
+                    </p>
+                    <p class="heading-handle text-xs text-gray-400 font-extralight">
+                        @ChelseaFC
+                    </p>
+                </div>
+                <div class="social-card-heading-date flex flex-col items-center w-16 ml-auto">
+                    <a href="#" class="social-card-heading-link">
+                        <i class='bx bxl-twitter text-blue-500'></i>
+                    </a>
+                    <span>4 May</span>
+                </div>
+            </div>
+            <!-- End of card heading -->
+            <!-- Card body -->
+            <div class="social-card-body">
+                We just love seeing 𝘁𝗵𝗮𝘁 smile
+            </div>
+            <!-- End of Card body -->
+            <!-- Hashtags -->
+            <div class="social-card-hashtags mb-12">
+                <p class="text-blue-400">
+                    pic.twitter.com/wwzNlVsRsk
+                </p>
+            </div>
+            <!-- End of Hashtags -->
+            <div class="social-card-links absolute bottom-5 left-0 w-full">
+                <ul class="social-card-list inline-block flex justify-evenly">
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bx-reply'></i>
+                        </a>
+                    </li>
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bx-repost'></i>
+                        </a>
+                    </li>
+                    <li class="social-card-list-item">
+                        <a href="" class="social-card-link">
+                            <i class='bx bxs-heart scale-90'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Card footer -->
+            <div class="social-card-footer absolute bottom-0 left-0 w-full h-4 bg-blue-600">
+
+            </div>
+            <!-- End of Card footer -->
+        </div>
+        <!-- End of Single card (with image) -->
+    </div>
+    <!-- end of cards container -->
+</section>
 {% endblock social_media %}
 <!-- End of Social media latest section -->
+
+<!-- Sponsors display board -->
+{% block sponsors_board %}
+<section class="sponsors_board w-full py-16 bg-blue-100 my-16">
+    <div class="sponsors-logo-wrapper grid grid-cols-7 grid-rows-3 gap-x-2.5 gap-y-10 justify-center w-10/12 mx-auto">
+        <!-- Top row -->
+        <div class="col-start-3 col-end-4 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <div class="col-start-5 col-end-6 flex justify-center">
+            <img src="/media/images/three_-_header_-_trans.max-320x200.png" alt="">
+        </div>
+        <!-- End of Top row -->
+        <!-- Middle row -->
+        <!-- Col 1 -->
+        <div class="col-start-1 col-end-2 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 2 -->
+        <div class="col-start-2 col-end-3 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 3 -->
+        <div class="col-start-3 col-end-4 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 4 -->
+        <div class="col-start-4 col-end-5 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 5 -->
+        <div class="col-start-5 col-end-6 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 6 -->
+        <div class="col-start-6 col-end-7 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 7 -->
+        <div class="col-start-7 col-end-8 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- End of Middle row -->
+        <!-- Bottom row -->
+        <!-- Col 1 -->
+        <div class="col-start-1 col-end-2 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 2 -->
+        <div class="col-start-2 col-end-3 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 3 -->
+        <div class="col-start-3 col-end-4 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 4 -->
+        <div class="col-start-4 col-end-5 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 5 -->
+        <div class="col-start-5 col-end-6 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 6 -->
+        <div class="col-start-6 col-end-7 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- Col 7 -->
+        <div class="col-start-7 col-end-8 flex justify-center ">
+            <img src="/media/images/Nike_XL_White_1.max-320x200.png" alt="" width="100">
+        </div>
+        <!-- End of Bottom row -->
+    </div>
+</section>
+{% endblock sponsors_board %}

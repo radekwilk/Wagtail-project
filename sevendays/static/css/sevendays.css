@@ -400,6 +400,42 @@ footer {
 
 /* END OF FEATURED VIDEO SECTION */
 
+/* SOCIAL MEDIA LATEST  */
+.social-cards-container {
+    height: 28.5rem;
+}
+
+.social-card-link i{
+    font-size: 1.5rem;
+    color: #EBE6DF;
+    transition: text-shadow 0.5s, color .5s;
+}
+
+.social-card-link:hover i{
+    text-shadow: 1px 1px 2px rgba(0,0,0,.2);
+}
+
+/* HART on hover */
+.social-card-list-item:hover i.bxs-heart{
+    color: #e0245e;
+}
+/* Repost on hover */
+.social-card-list-item:hover i.bx-repost{
+    color: #55cf8d;
+}
+/* reply on hover */
+.social-card-list-item:hover i.bx-reply{
+    color: #03f;
+}
+
+.social-card-img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* END OF SOCIAL MEDIA LATEST  */
+
 @keyframes borderHover {
     0% {
       border-top-color: #03f;

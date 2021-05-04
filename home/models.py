@@ -184,6 +184,14 @@ class HomePage(Page):
         related_name='+',
     )
 
+    club_sponsors_board = models.ForeignKey(
+        'SponsorsBoard',
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+
     content_panels = Page.content_panels + [
         ImageChooserPanel("logo_image"),
         SnippetChooserPanel("sponsor1"),
@@ -209,6 +217,7 @@ class HomePage(Page):
         SnippetChooserPanel("league_table_team_info_pos3"),
         SnippetChooserPanel("watch"),
         SnippetChooserPanel("featured_video"),
+        SnippetChooserPanel("club_sponsors_board"),
     ]
 
 
@@ -387,3 +396,143 @@ class TeamLeagueDetail(models.Model):
 
     def __str__(self):
         return f'Team name: {self.team_name}'
+
+
+@register_snippet
+class SponsorsBoard(models.Model):
+    sponsors_board_name = models.CharField(max_length=100, blank=False)
+    main_sponsor_1 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    main_sponsor_2 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_1 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_2 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_3 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_4 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_5 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_6 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_7 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_8 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_9 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_10 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_11 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_12 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_13 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+    sponsor_14 = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+'
+    )
+
+    panels = [
+        FieldPanel("sponsors_board_name"),
+        ImageChooserPanel("main_sponsor_1"),
+        ImageChooserPanel("main_sponsor_2"),
+        ImageChooserPanel("sponsor_1"),
+        ImageChooserPanel("sponsor_2"),
+        ImageChooserPanel("sponsor_3"),
+        ImageChooserPanel("sponsor_4"),
+        ImageChooserPanel("sponsor_5"),
+        ImageChooserPanel("sponsor_6"),
+        ImageChooserPanel("sponsor_7"),
+        ImageChooserPanel("sponsor_8"),
+        ImageChooserPanel("sponsor_9"),
+        ImageChooserPanel("sponsor_10"),
+        ImageChooserPanel("sponsor_11"),
+        ImageChooserPanel("sponsor_12"),
+        ImageChooserPanel("sponsor_13"),
+        ImageChooserPanel("sponsor_14"),
+    ]
+
+    def __str__(self):
+        return f'Board: {self.sponsors_board_name}'
