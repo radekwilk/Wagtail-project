@@ -58,12 +58,86 @@
     <!-- Sponsors display board -->
     {% block sponsors_board %}{% endblock sponsors_board %}
 
-    <footer>
-        {% if settings.site_settings.SocialMediaSettings.instagram %}
+    <footer class="footer w-full">
+        <div class="footer-container w-11/12 h-44 mx-auto flex flex-col justify-center items-center ">
+            <!-- footer social -->
+            <div class="footer-social w-3/5 mx-auto mb-10">
+                <ul class="footer-social-list flex justify-evenly">
+                    <li class="footer-social-item mr-4">
+                        <a href="" class="footer-social-link">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+                    </li>
+                    <li class="footer-social-item mr-4">
+                        <a href="" class="footer-social-link">
+                            <i class='bx bxl-twitter'></i>
+                        </a>
+                    </li>
+                    <li class="footer-social-item mr-4">
+                        <a href="" class="footer-social-link">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                    </li>
+                    <li class="footer-social-item">
+                        <a href="" class="footer-social-link">
+                            <i class='bx bxl-youtube'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of footer social -->
+            <!-- footer navbar -->
+            <div class="footer-navbar w-full mb-4">
+                <ul class="footer-navbar-list flex justify-evenly font-semibold text-blue-900">
+                    <li class="footer-navbar-item mr-4">
+                        <a href="" class="footer-navbar-link uppercase text-blue-800">
+                            Contact us
+                        </a>
+                    </li>
+                    <li class="footer-navbar-item mr-4">
+                        <a href="" class="footer-navbar-link uppercase text-blue-800">
+                            FAQ's
+                        </a>
+                    </li>
+                    <li class="footer-navbar-item mr-4">
+                        <a href="" class="footer-navbar-link uppercase text-blue-800">
+                            Careers
+                        </a>
+                    </li>
+                    <li class="footer-navbar-item">
+                        <a href="" class="footer-navbar-link uppercase text-blue-800">
+                            Modern Slavery Act
+                        </a>
+                    </li>
+                    <li class="footer-navbar-item mr-4">
+                        <a href="" class="footer-navbar-link uppercase text-blue-800">
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li class="footer-navbar-item mr-4">
+                        <a href="" class="footer-navbar-link uppercase text-blue-800">
+                            Cookies Policy
+                        </a>
+                    </li>
+                    <li class="footer-navbar-item mr-4">
+                        <a href="" class="footer-navbar-link uppercase text-blue-800">
+                            Terms & Conditions
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of footer navbar -->
+            <!-- Copy rights -->
+            <p class="footer-copyrights text-sm font-extralight">
+                &copy; 2021 Chelsea FC. All rights reserved. No part of this site may be reproduced without our written
+                permission.
+            </p>
+        </div>
+
+
         <a href="{{ settings.site_settings.SocialMediaSettings.instagram }}">
             Instagram
         </a>
-        {% endif %}
     </footer>
 
 
