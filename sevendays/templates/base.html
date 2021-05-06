@@ -1,4 +1,4 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar wagtailimages_tags menus_tags %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -17,6 +17,8 @@
     </title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- TODO: rel icon -->
+    <!-- <link rel="icon" type="image/png" href="./media/images/chfc-favicon.png" /> -->
 
     {# Global stylesheets #}
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
@@ -30,8 +32,108 @@
 
 <body class="{% block body_class %}{% endblock %} ">
     {% wagtailuserbar %}
+
+    <!-- GET MENU -->
+    {% get_menu "main" as top_navigation %}
+    {% get_menu "submenu" as sub_navigation %}
+    {% get_menu "footer" as footer_navigation %}
+
     <nav class="nav w-full relative">
-        {% block navigation %}{% endblock navigation%}
+        {% image page.logo_image fill-300x300 as logo %}
+        {% image page.sponsor1.image max-320x200 as sponsor1 %}
+        {% image page.sponsor2.image max-320x200 as sponsor2 %}
+
+        <div class="nav-top flex items-center justify-between flex-wrap p-6 w-full">
+            <div class="flex items-center flex-shrink-0 text-white mr-6 absolute top-12 left-4 rounded-full">
+                <img src="{{ logo.url }}" alt="logo.alt">
+            </div>
+            <div class="block lg:hidden">
+                <button
+                    class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+            <!-- TOP NAVIGATION -->
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide">
+                <div class="w-9/12 text-lg uppercase text-white flex justify-center">
+                    <a href="/" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
+                        Home
+                    </a>
+                    <!-- Adding menu items from Menu snippet -->
+                    {% for item in top_navigation.menu_items.all %}
+                    <a href="{{ item.link }}" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
+                        {{ item.title }}
+                    </a>
+                    {% endfor %}
+
+                </div>
+                <div>
+                    <ul class="nav-link inline-block flex justify-evenly font-thin">
+                        <li class="nav-items px-6">
+                            <img src="{{ sponsor1.url }}" alt="{{ sponsor1.alt }}" class="sponsor-logo">
+                        </li>
+                        <li class="nav-items px-6">
+                            <img src="{{ sponsor2.url }}" alt="{{ sponsor2.alt }}" class="sponsor-logo">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END OF TOP NAVIGATION -->
+        </div>
+
+        <!-- BOTTOM NAVIGATION -->
+        <div class="nav-bottom flex items-center justify-between flex-wrap pt-3 pb-8 w-full">
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide">
+                <div class="w-6/12 ml-60 text-sm uppercase text-white flex justify-start">
+
+                    <!-- Adding menu items from Menu snippet -->
+                    {% for item in sub_navigation.menu_items.all %}
+                    <a href="{{ item.link }}"
+                        class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                        {{ item.title }}
+                    </a>
+                    {% endfor %}
+                    <!-- <a href="#responsive-header"
+                        class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                        Videos
+                    </a>
+                    <a href="#responsive-header"
+                        class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                        Matches
+                    </a>
+                    <a href="#responsive-header"
+                        class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                        Teams
+                    </a>
+                    <a href="#responsive-header"
+                        class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                        Tickets & membership
+                    </a> -->
+                    <a href="#responsive-header"
+                        class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 nav-bottom-link">
+                        Shop
+                        <i class='bx bxs-shopping-bags'></i>
+                    </a>
+                </div>
+                <div class="ml-12">
+                    <ul class="nav-link inline-block flex justify-evenly font-thin text-sm text-gray-100">
+                        <li class="nav-bottom-link nav-bottom-link-right opacity-80 mr-4 px-6 cursor-pointer">
+                            <i class='bx bx-search-alt-2 text-xl align-middle'></i>
+                        </li>
+                        <li class="nav-bottom-link nav-bottom-link-right border-l border-r border-gray-50 px-6">
+                            <a href="/admin" target="_blank" class="uppercase mr-4 opacity-80">LOGIN</a>
+                        </li>
+                        <li class="nav-bottom-link nav-bottom-link-right px-6">
+                            <a href="#" class="uppercase opacity-80">Join us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END OF BOTTOM NAVIGATION -->
     </nav>
 
     <!-- section with hero background and tagline -->
@@ -89,12 +191,17 @@
             <!-- footer navbar -->
             <div class="footer-navbar w-full mb-4">
                 <ul class="footer-navbar-list flex justify-evenly font-semibold text-blue-900">
+
+                    <!-- Adding menu items from Menu snippet -->
+                    {% for item in footer_navigation.menu_items.all %}
                     <li class="footer-navbar-item mr-4">
-                        <a href="" class="footer-navbar-link uppercase text-blue-800">
-                            Contact us
+                        <a href="{{ item.link }}" class="footer-navbar-link uppercase text-blue-800">
+                            {{ item.title }}
                         </a>
                     </li>
-                    <li class="footer-navbar-item mr-4">
+                    {% endfor %}
+
+                    <!-- <li class="footer-navbar-item mr-4">
                         <a href="" class="footer-navbar-link uppercase text-blue-800">
                             FAQ's
                         </a>
@@ -123,21 +230,18 @@
                         <a href="" class="footer-navbar-link uppercase text-blue-800">
                             Terms & Conditions
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- End of footer navbar -->
             <!-- Copy rights -->
             <p class="footer-copyrights text-sm font-extralight">
-                &copy; 2021 Chelsea FC. All rights reserved. No part of this site may be reproduced without our written
-                permission.
+                &copy; 2021 Radek Wilk.
             </p>
         </div>
-
-
-        <a href="{{ settings.site_settings.SocialMediaSettings.instagram }}">
+        <!-- <a href="{{ settings.site_settings.SocialMediaSettings.instagram }}">
             Instagram
-        </a>
+        </a> -->
     </footer>
 
 

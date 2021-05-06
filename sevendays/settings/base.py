@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'search',
     'generic',
     'site_settings',
+    'menus',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

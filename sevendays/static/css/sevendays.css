@@ -5,6 +5,10 @@ body, html {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color:  #EBE6DF;
     position: relative;

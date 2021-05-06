@@ -54,6 +54,6 @@ const x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.querySelector(".counter").innerHTML = "EXPIRED";
+    document.querySelector(".counter").innerHTML = "MATCH FINISHED";
   }
 }, 1000);

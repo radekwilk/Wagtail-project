@@ -1,109 +1,13 @@
 {% extends "base.html" %}
 {% load static wagtailimages_tags wagtailcore_tags %}
 
+
 {% block body_class %}template-homepage{% endblock %}
 
 {% block extra_css %}
 
 {% endblock extra_css %}
 
-
-{% block navigation %}
-
-{% image page.logo_image fill-300x300 as logo %}
-{% image page.sponsor1.image max-320x200 as sponsor1 %}
-{% image page.sponsor2.image max-320x200 as sponsor2 %}
-
-<div class="nav-top flex items-center justify-between flex-wrap p-6 w-full">
-    <div class="flex items-center flex-shrink-0 text-white mr-6 absolute top-12 left-4 rounded-full">
-        <img src="{{ logo.url }}" alt="logo.alt">
-    </div>
-    <div class="block lg:hidden">
-        <button
-            class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-        </button>
-    </div>
-    <!-- TOP NAVIGATION -->
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide">
-        <div class="w-9/12 text-lg uppercase text-white flex justify-center">
-            <a href="#" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
-                About chelsea
-            </a>
-            <a href="#" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
-                Stamford Bridge
-            </a>
-            <a href="#" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
-                Fans
-            </a>
-            <a href="#responsive-header" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 ">
-                Junior blues
-            </a>
-        </div>
-        <div>
-            <ul class="nav-link inline-block flex justify-evenly font-thin">
-                <li class="nav-items px-6">
-                    <img src="{{ sponsor1.url }}" alt="{{ sponsor1.alt }}" class="sponsor-logo">
-                </li>
-                <li class="nav-items px-6">
-                    <img src="{{ sponsor2.url }}" alt="{{ sponsor2.alt }}" class="sponsor-logo">
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- END OF TOP NAVIGATION -->
-</div>
-
-<!-- BOTTOM NAVIGATION -->
-<div class="nav-bottom flex items-center justify-between flex-wrap pt-3 pb-8 w-full">
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide">
-        <div class="w-6/12 ml-60 text-sm uppercase text-white flex justify-start">
-            <a href="#responsive-header"
-                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
-                News
-            </a>
-            <a href="#responsive-header"
-                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
-                Videos
-            </a>
-            <a href="#responsive-header"
-                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
-                Matches
-            </a>
-            <a href="#responsive-header"
-                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
-                Teams
-            </a>
-            <a href="#responsive-header"
-                class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
-                Tickets & membership
-            </a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 nav-bottom-link">
-                Shop
-                <i class='bx bxs-shopping-bags'></i>
-            </a>
-        </div>
-        <div class="ml-12">
-            <ul class="nav-link inline-block flex justify-evenly font-thin text-sm text-gray-100">
-                <li class="nav-bottom-link nav-bottom-link-right opacity-80 mr-4 px-6 cursor-pointer">
-                    <i class='bx bx-search-alt-2 text-xl align-middle'></i>
-                </li>
-                <li class="nav-bottom-link nav-bottom-link-right border-l border-r border-gray-50 px-6">
-                    <a href="/admin" target="_blank" class="uppercase mr-4 opacity-80">LOGIN</a>
-                </li>
-                <li class="nav-bottom-link nav-bottom-link-right px-6">
-                    <a href="#" class="uppercase opacity-80">Join us</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!-- END OF BOTTOM NAVIGATION -->
-
-{% endblock %}
 
 {% block hero_section %}
 {% image page.bg_image original as bg_img %}
@@ -189,97 +93,97 @@
 
 <!-- NEWS SECTION -->
 {% block news_section %}
-<section class="news-section w-full"></section>
-<h3 class="news-heading capitalize ml-9 mb-8">News</h3>
-<div class="news_section-grid w-11/12 mx-auto grid grid-cols-3 grid-rows-2 gap-7">
-    <!-- Double grid post - top row -->
-    <div class="news-cell news-cell-double news-cell-img col-span-2 relative">
-        {% image page.news_post_double.image original as img_post_double %}
-        {% if page.news_post_double.post_type %}
-        <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
-            {{ page.news_post_double.post_type }}
-        </span>
-        {% endif %}
-        <img src="{{ img_post_double.url }}" alt="{{ img_post_double.alt }}">
-        <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
+<section class="news-section w-full" id="news">
+    <h3 class="news-heading capitalize ml-9 mb-8">News</h3>
+    <div class="news_section-grid w-11/12 mx-auto grid grid-cols-3 grid-rows-2 gap-7">
+        <!-- Double grid post - top row -->
+        <div class="news-cell news-cell-double news-cell-img col-span-2 relative">
+            {% image page.news_post_double.image original as img_post_double %}
+            {% if page.news_post_double.post_type %}
+            <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
+                {{ page.news_post_double.post_type }}
+            </span>
+            {% endif %}
+            <img src="{{ img_post_double.url }}" alt="{{ img_post_double.alt }}">
+            <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
 
-            {{ page.news_post_double.post_title }}
+                {{ page.news_post_double.post_title }}
+                <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs uppercase">
+                    {{ page.news_post_double.date|date:"F j Y, h:i A" }}
+                </span>
+            </div>
+        </div>
+        <!-- Text only news - top row -->
+        <div class="news-cell news-cell-single news-cell-post relative ">
+            {% if page.news_post_text.post_type %}
+            <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
+                {{ page.news_post_text.post_type }}
+            </span>
+            {% endif %}
+            <h3 class="text-3xl uppercase p-2 mb-1">
+                {{ page.news_post_text.post_title }}
+            </h3>
+            <p class="text-base p-2 mb-2">
+                {{ page.news_post_text.post_text }}
+            </p>
             <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs uppercase">
-                {{ page.news_post_double.date|date:"F j, Y" }}
+                {{ page.news_post_text.date|date:"F j Y, h:i A" }}
             </span>
         </div>
-    </div>
-    <!-- Text only news - top row -->
-    <div class="news-cell news-cell-single news-cell-post relative ">
-        {% if page.news_post_text.post_type %}
-        <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
-            {{ page.news_post_text.post_type }}
-        </span>
-        {% endif %}
-        <h3 class="text-3xl uppercase p-2 mb-1">
-            {{ page.news_post_text.post_title }}
-        </h3>
-        <p class="text-base p-2 mb-2">
-            {{ page.news_post_text.post_text }}
-        </p>
-        <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs uppercase">
-            {{ page.news_post_text.date|date:"F j, Y" }}
-        </span>
-    </div>
-    <!-- BOTTOM NEWS GRID - LEFT SIDE -->
-    <div class="news-cell news-cell-single news-cell-img relative">
-        {% image page.news_post_left.image original as img_post_left %}
-        {% if page.news_post_left.post_type %}
-        <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
-            {{ page.news_post_left.post_type }}
-        </span>
-        {% endif %}
-        <img src="{{ img_post_left.url }}" alt="{{ img_post_left.alt }}">
-        <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
-
-            {{ page.news_post_left.post_title }}
-            <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs">
-                {{ page.news_post_left.date|date:"F j, Y" }}
+        <!-- BOTTOM NEWS GRID - LEFT SIDE -->
+        <div class="news-cell news-cell-single news-cell-img relative">
+            {% image page.news_post_left.image original as img_post_left %}
+            {% if page.news_post_left.post_type %}
+            <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
+                {{ page.news_post_left.post_type }}
             </span>
+            {% endif %}
+            <img src="{{ img_post_left.url }}" alt="{{ img_post_left.alt }}">
+            <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
+
+                {{ page.news_post_left.post_title }}
+                <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs">
+                    {{ page.news_post_left.date|date:"F j Y, h:i A" }}
+                </span>
+            </div>
         </div>
-    </div>
-    <!-- END OF BOTTOM NEWS GRID - LEFT SIDE -->
+        <!-- END OF BOTTOM NEWS GRID - LEFT SIDE -->
 
-    <!-- BOTTOM MIDDLE COL (ADVERT) -->
-    <div class="news-cell news-cell-single news-cell-adv">
-        {% image page.adv_sport_news original as img_post_adv %}
-        <img src="{{ img_post_adv.url }}" alt="{{ img_post_adv.alt }}">
-    </div>
-    <!-- END OF BOTTOM MIDDLE COL (ADVERT) -->
+        <!-- BOTTOM MIDDLE COL (ADVERT) -->
+        <div class="news-cell news-cell-single news-cell-adv">
+            {% image page.adv_sport_news original as img_post_adv %}
+            <img src="{{ img_post_adv.url }}" alt="{{ img_post_adv.alt }}">
+        </div>
+        <!-- END OF BOTTOM MIDDLE COL (ADVERT) -->
 
-    <!-- BOTTOM NEWS GRID - RIGHT SIDE -->
-    <div class="news-cell news-cell-single news-cell-img relative">
-        {% image page.news_post_right.image original as img_post_right %}
-        {% if page.news_post_right.post_type %}
-        <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
-            {{ page.news_post_right.post_type }}
-        </span>
-        {% endif %}
-        <img src="{{ img_post_right.url }}" alt="{{ img_post_right.alt }}">
-        <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
-
-            {{ page.news_post_right.post_title }}
-            <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs">
-                {{ page.news_post_right.date|date:"F j, Y" }}
+        <!-- BOTTOM NEWS GRID - RIGHT SIDE -->
+        <div class="news-cell news-cell-single news-cell-img relative">
+            {% image page.news_post_right.image original as img_post_right %}
+            {% if page.news_post_right.post_type %}
+            <span class="news-cell-action inline-block absolute top-2 left-2 py-1 px-2 text-white z-10">
+                {{ page.news_post_right.post_type }}
             </span>
-        </div>
+            {% endif %}
+            <img src="{{ img_post_right.url }}" alt="{{ img_post_right.alt }}">
+            <div class="news-cell-text absolute bottom-0 left-0 w-full px-4 text-white uppercase text-2xl">
 
+                {{ page.news_post_right.post_title }}
+                <span class="news-cell-date inline-block absolute bottom-2 left-2 text-xs">
+                    {{ page.news_post_right.date|date:"F j, Y" }}
+                </span>
+            </div>
+
+        </div>
+        <!-- END OF BOTTOM NEWS GRID - RIGHT SIDE -->
     </div>
-    <!-- END OF BOTTOM NEWS GRID - RIGHT SIDE -->
-</div>
-<button class="cards-btn bg-transparent font-semibold py-2 px-4 rounded block mb-4 mt-8 mx-auto">
-    See all News
-</button>
+    <button class="cards-btn bg-transparent font-semibold py-2 px-4 rounded block mb-4 mt-8 mx-auto">
+        See all News
+    </button>
 </section>
 {% endblock news_section %}
 
 {% block matches_dashboard %}
-<section class="matches_dashboard-section w-full mt-16"></section>
+<section class="matches_dashboard-section w-full mt-16" id="matches-section"></section>
 <div class="matches-dashboard relative">
     <div class="matches-dashboard-title text-4xl absolute uppercase mx-6 px-4 ">
         Matches
@@ -560,7 +464,7 @@
 
 <!-- Featured videos section -->
 {% block featured_videos %}
-<section class="featured-videos w-full my-24 relative">
+<section class="featured-videos w-full my-24 relative" id="videos-section">
     <h3 class="news-heading capitalize ml-9 mb-8">Featured video</h3>
     <div class="featured-videos-wrapper flex w-11/12 mx-auto">
         {% image page.featured_video.image original as img_video %}
