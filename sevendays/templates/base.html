@@ -44,12 +44,13 @@
         {% image page.sponsor2.image max-320x200 as sponsor2 %}
 
         <div class="nav-top flex items-center justify-between flex-wrap p-6 w-full">
-            <div class="flex items-center flex-shrink-0 text-white mr-6 absolute top-12 left-4 rounded-full">
+            <div
+                class="flex items-center flex-shrink-0 text-white mr-6 absolute top-12 left-4 rounded-full nav-top-logo">
                 <img src="{{ logo.url }}" alt="logo.alt">
             </div>
-            <div class="block lg:hidden">
+            <div class="hamburger-menu">
                 <button
-                    class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                    class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white transition-colors">
                     <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <title>Menu</title>
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -57,14 +58,14 @@
                 </button>
             </div>
             <!-- TOP NAVIGATION -->
-            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide">
+            <div class="w-full block flex-grow flex items-center w-auto tracking-wide large-screen-main-nav">
                 <div class="w-9/12 text-lg uppercase text-white flex justify-center">
-                    <a href="/" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
+                    <a href="/" class="nav-top-link relative inline-block mt-0 mr-6">
                         Home
                     </a>
                     <!-- Adding menu items from Menu snippet -->
                     {% for item in top_navigation.menu_items.all %}
-                    <a href="{{ item.link }}" class="nav-top-link relative block mt-4 lg:inline-block lg:mt-0 mr-6">
+                    <a href="{{ item.link }}" class="nav-top-link relative inline-block mt-0 mr-6">
                         {{ item.title }}
                     </a>
                     {% endfor %}
@@ -86,24 +87,22 @@
 
         <!-- BOTTOM NAVIGATION -->
         <div class="nav-bottom flex items-center justify-between flex-wrap pt-3 pb-8 w-full">
-            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide">
-                <div class="w-6/12 ml-60 text-sm uppercase text-white flex justify-start">
+            <div class="w-full block flex-grow flex items-center w-auto tracking-wide">
+                <div class="w-6/12 ml-60 text-sm uppercase text-white flex justify-start large-screen-submenu-nav">
 
                     <!-- Adding menu items from Menu snippet -->
                     {% for item in sub_navigation.menu_items.all %}
-                    <a href="{{ item.link }}"
-                        class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
+                    <a href="{{ item.link }}" class="inline-block mt-0 hover:text-gray-200 mr-6 nav-bottom-link">
                         {{ item.title }}
                     </a>
                     {% endfor %}
 
-                    <a href="#responsive-header"
-                        class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-200 nav-bottom-link">
+                    <a href="#responsive-header" class="inline-block mt-0 hover:text-gray-200 nav-bottom-link">
                         Shop
                         <i class='bx bxs-shopping-bags'></i>
                     </a>
                 </div>
-                <div class="ml-12">
+                <div class="ml-12 large-screen-sponsors-menu">
                     <ul class="nav-link inline-block flex justify-evenly font-thin text-sm text-gray-100">
                         <li class="nav-bottom-link nav-bottom-link-right opacity-80 mr-4 px-6 cursor-pointer">
                             <i class='bx bx-search-alt-2 text-xl align-middle'></i>
@@ -120,6 +119,63 @@
         </div>
         <!-- END OF BOTTOM NAVIGATION -->
     </nav>
+    <!-- Navigation for small devices -->
+    <div class="responsive-nav w-full h-full absolute top-0 left-0">
+        <div class="responsive-nav-container w-11/12 mx-auto py-8 px-4 h-full flex flex-col">
+            <!-- Closing button -->
+            <div class="responsive-nav-close text-white text-3xl font-light cursor-pointer absolute top-4 right-4">
+                &times;</div>
+            <!-- Logo -->
+            <div class="flex items-center rounded-full self-center w-16">
+                <img src="{{ logo.url }}" alt="logo.alt">
+            </div>
+            <!-- End of logo -->
+            <hr class="hr-style my-4">
+            <!-- Main menu -->
+            <div class="responsive-nav-main-menu text-white flex flex-col justify-evenly">
+                <a href="/" class="block mt-2 hover:text-gray-200 transition-colors">
+                    Home
+                </a>
+                <!-- Adding menu items from Menu snippet -->
+                {% for item in top_navigation.menu_items.all %}
+                <a href="{{ item.link }}" class="block mt-2 hover:text-gray-200 transition-colors">
+                    {{ item.title }}
+                </a>
+                {% endfor %}
+            </div>
+            <!-- End of Main menu -->
+            <hr class="hr-style my-4">
+            <!-- Submenu menu -->
+            <div class="responsive-nav-submenu text-white">
+                <!-- Adding menu items from Menu snippet -->
+                {% for item in sub_navigation.menu_items.all %}
+                <a href="{{ item.link }}" class="block hover:text-gray-200 mt-2 transition-colors">
+                    {{ item.title }}
+                </a>
+                {% endfor %}
+
+                <a href="#responsive-header" class="block hover:text-gray-200 transition-colors mt-2">
+                    Shop
+                    <i class='bx bxs-shopping-bags'></i>
+                </a>
+            </div>
+            <!-- End of Submenu menu -->
+            <hr class="hr-style my-4">
+            <!-- Sponsors -->
+            <div class="responsive-nav-sponsors-menu mt-4">
+                <ul class="nav-link block flex justify-evenly font-thin">
+                    <li class="nav-items px-6">
+                        <img src="{{ sponsor1.url }}" alt="{{ sponsor1.alt }}" class="sponsor-logo">
+                    </li>
+                    <li class="nav-items px-6">
+                        <img src="{{ sponsor2.url }}" alt="{{ sponsor2.alt }}" class="sponsor-logo">
+                    </li>
+                </ul>
+            </div>
+            <!-- End of Sponsors -->
+        </div>
+    </div>
+    <!-- End of Navigation for small devices -->
 
     <!-- section with hero background and tagline -->
     {% block hero_section %}{% endblock hero_section %}

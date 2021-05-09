@@ -1,3 +1,18 @@
+// HAMBURGER MENU FUNCTIONALITY
+const $menu = document.querySelector('.hamburger-menu')
+const $body = document.querySelector('body')
+const $closeBtn = document.querySelector('.responsive-nav-close')
+
+$menu.addEventListener('click',()=> {
+  $body.classList.add('change')
+})
+
+$closeBtn.addEventListener('click',()=> {
+  $body.classList.remove('change')
+})
+
+
+
 // THIS IS TO RUN ANALOG WATCH IN MATCHES DASHBOARD
 const deg = 6;
 const hr = document.querySelector('.tip-handle-hr');

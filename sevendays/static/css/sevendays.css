@@ -15,6 +15,12 @@ body {
     z-index: -100;
 }
 
+hr.hr-style {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
 /* NAVIGATION */
 
     /* TOP NAVBAR */
@@ -49,7 +55,7 @@ a.nav-top-link:hover:after {
     transform: scale(1.1);
 }
 
-    /* BOTTOM NAVBAR */
+    /* Submanu NAVBAR */
 
 .nav-bottom {
     background-color: transparent;
@@ -59,11 +65,6 @@ a.nav-top-link:hover:after {
 .nav-bottom:hover {
     background-color: #fff;
 }
-
-/* .nav-bottom:hover a {
-    color: #140a47;
-    transition: color 0.5s .2s;
-} */
 
 .nav-bottom-link {
     transition: color .5s;
@@ -113,27 +114,29 @@ a.nav-bottom-link:hover:after {
     text-shadow: 1px 1px 2px rgba(0,0,0,.5);
 }
 
+/* RESPONSIVE NAV */
+.responsive-nav {
+    background-color: #03f;
+    z-index: 500;
+    display: none;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: all .8s;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+/* Hero section */
 .content {
     transform: translateY(-10%);
-    position: relative;
     z-index: -10;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 .content img {
     width: 100%;
 }
-
-/* main, footer {
-    max-width: 800px;
-    margin: 0 auto;
-} */
-
-/* footer {
-    padding: 50px 0;
-} */
 
 .block-heading {
     font-size: 35px;
@@ -145,6 +148,7 @@ a.nav-bottom-link:hover:after {
     height: auto;
 }
 
+/* Cards section - just under hero section */
 .main-content {
     background-color: #EBE6DF;
     transform: translateY(-20%);
@@ -354,9 +358,7 @@ a.nav-bottom-link:hover:after {
 .watch-hrs, .watch-minutes, .watch-seconds {
     height: 100%;
 }
-
-/* WATCH STYLING */
-
+/* END OF WATCH STYLING */
 /*END OF MATCHES DASHBOARD */
 
 /* FEATURED VIDEO SECTION */
@@ -401,7 +403,6 @@ a.nav-bottom-link:hover:after {
 .featured-video-wrapper:hover img {
     transform: scale(1.1);
 }
-
 /* END OF FEATURED VIDEO SECTION */
 
 /* SOCIAL MEDIA LATEST  */
@@ -423,7 +424,7 @@ a.nav-bottom-link:hover:after {
 .social-card-list-item:hover i.bxs-heart{
     color: #e0245e;
 }
-/* Repost on hover */
+/* Re-post on hover */
 .social-card-list-item:hover i.bx-repost{
     color: #55cf8d;
 }
@@ -436,6 +437,7 @@ a.nav-bottom-link:hover:after {
     width: 100%;
     object-fit: cover;
 }
+/* END OF SOCIAL MEDIA LATEST  */
 
 /* SPONSORS BOARD */
 .sm-sponsor-logo {
@@ -459,8 +461,6 @@ a.nav-bottom-link:hover:after {
     transform: scale(1.1);
     opacity: 1;
 }
-/* END OF SOCIAL MEDIA LATEST  */
-
 
 /* FOOTER STYLING */
 .footer-social-item {
@@ -501,6 +501,15 @@ a.nav-bottom-link:hover:after {
     color: #03f;
 }
 
+/* Styling of navbar when resizing */
+.change .responsive-nav {
+    display: block;
+    transform: scale(1);
+    transition: all .8s;
+}
+
+
+
 /* END OF STYLING */
 
 @keyframes borderHover {
@@ -518,5 +527,36 @@ a.nav-bottom-link:hover:after {
     }
     100% {
       border-top-color: #03f;  
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 900px) {
+    .nav-top {
+        height: 1.5rem;
+    }
+    
+    .nav-top-logo {
+        top: .5rem;
+        left: .5rem;
+    }
+
+    .large-screen-sponsors-menu {
+        margin-left: auto;
+    }
+
+    .hamburger-menu {
+        position: absolute;
+        display: block;
+        right: 2rem;
+        top: .7rem;
+    }
+
+    .large-screen-main-nav {
+        display: none;
+    }
+
+    .large-screen-submenu-nav {
+        display: none;
     }
 }

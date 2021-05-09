@@ -11,9 +11,9 @@
 <!-- Hero Section - includes background image and banner heading -->
 {% block hero_section %}
     {% image page.bg_image original as bg_img %}
-    <div class="content w-full h-screen" style="background: 
+    <div class="content w-full h-screen relative" style="background: 
             linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4))
-            ,url({{ bg_img.url }});">
+            ,url({{ bg_img.url }}) no-repeat center;background-size:cover">
 
         <div class="banner absolute bottom-48 left-6 w-11/12 mx-auto text-white text-6xl font-semibold">
             {{ page.banner_title }}
