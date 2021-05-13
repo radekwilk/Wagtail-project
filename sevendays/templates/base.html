@@ -120,7 +120,7 @@
         <!-- END OF BOTTOM NAVIGATION -->
     </nav>
     <!-- Navigation for small devices -->
-    <div class="responsive-nav w-full h-full absolute top-0 left-0">
+    <div class="responsive-nav w-full h-full absolute top-0 right-0">
         <div class="responsive-nav-container w-11/12 mx-auto py-8 px-4 h-full flex flex-col">
             <!-- Closing button -->
             <div class="responsive-nav-close text-white text-3xl font-light cursor-pointer absolute top-4 right-4">
@@ -133,12 +133,12 @@
             <hr class="hr-style my-4">
             <!-- Main menu -->
             <div class="responsive-nav-main-menu text-white flex flex-col justify-evenly">
-                <a href="/" class="block mt-2 hover:text-gray-200 transition-colors">
+                <a href="/" class="block mt-2 hover:text-gray-400 transition-colors">
                     Home
                 </a>
                 <!-- Adding menu items from Menu snippet -->
                 {% for item in top_navigation.menu_items.all %}
-                <a href="{{ item.link }}" class="block mt-2 hover:text-gray-200 transition-colors">
+                <a href="{{ item.link }}" class="block mt-2 hover:text-gray-400 transition-colors">
                     {{ item.title }}
                 </a>
                 {% endfor %}
@@ -149,12 +149,12 @@
             <div class="responsive-nav-submenu text-white">
                 <!-- Adding menu items from Menu snippet -->
                 {% for item in sub_navigation.menu_items.all %}
-                <a href="{{ item.link }}" class="block hover:text-gray-200 mt-2 transition-colors">
+                <a href="{{ item.link }}" class="block hover:text-gray-400 mt-2 transition-colors">
                     {{ item.title }}
                 </a>
                 {% endfor %}
 
-                <a href="#responsive-header" class="block hover:text-gray-200 transition-colors mt-2">
+                <a href="#responsive-header" class="block hover:text-gray-400 transition-colors mt-2">
                     Shop
                     <i class='bx bxs-shopping-bags'></i>
                 </a>

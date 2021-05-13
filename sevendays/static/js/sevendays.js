@@ -2,13 +2,16 @@
 const $menu = document.querySelector('.hamburger-menu')
 const $body = document.querySelector('body')
 const $closeBtn = document.querySelector('.responsive-nav-close')
+const $responsiveNav = document.querySelector('.responsive-nav')
 
 $menu.addEventListener('click',()=> {
-  $body.classList.add('change')
+  // $body.classList.add('change')
+  $responsiveNav.classList.add('change')
 })
 
 $closeBtn.addEventListener('click',()=> {
-  $body.classList.remove('change')
+  // $body.classList.remove('change')
+  $responsiveNav.classList.remove('change')
 })
 
 
@@ -72,3 +75,4 @@ const x = setInterval(function() {
     document.querySelector(".counter").innerHTML = "MATCH FINISHED";
   }
 }, 1000);
+

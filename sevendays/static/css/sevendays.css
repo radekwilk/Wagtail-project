@@ -118,14 +118,26 @@ a.nav-bottom-link:hover:after {
 .responsive-nav {
     background-color: #03f;
     z-index: 500;
-    display: none;
-    transform: scale(0);
+    opacity: 0;
+    transform: scale(0) rotate(270deg);
     transform-origin: top right;
-    transition: all .8s;
+    transition: all 1.2s;
 }
 
 .hamburger-menu {
     display: none;
+}
+
+/* Styling of navbar when resizing */
+.change .responsive-nav {
+    /* display: block;
+    transform: scale(1); */
+}
+
+.change.responsive-nav {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    transition: all 1.2s;
 }
 
 /* Hero section */
@@ -500,15 +512,6 @@ a.nav-bottom-link:hover:after {
     text-shadow: 1px 1px 5px rgba(0,0,0,.2);
     color: #03f;
 }
-
-/* Styling of navbar when resizing */
-.change .responsive-nav {
-    display: block;
-    transform: scale(1);
-    transition: all .8s;
-}
-
-
 
 /* END OF STYLING */
 
