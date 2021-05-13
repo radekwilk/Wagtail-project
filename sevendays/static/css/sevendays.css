@@ -142,7 +142,7 @@ a.nav-bottom-link:hover:after {
 
 /* Hero section */
 .content {
-    transform: translateY(-10%);
+    transform: translateY(-15%);
     z-index: -10;
 }
 
