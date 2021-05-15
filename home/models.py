@@ -372,11 +372,11 @@ class MatchInfo(models.Model):
 
 @register_snippet
 class TeamLeagueDetail(models.Model):
-    league_position = models.IntegerField(max_length=2, blank=False)
+    league_position = models.IntegerField(blank=False)
     team_name = models.CharField(max_length=100, blank=False)
-    games_played = models.IntegerField(max_length=2, blank=False)
-    goals_diff = models.IntegerField(max_length=3, blank=False)
-    points = models.IntegerField(max_length=3, blank=False)
+    games_played = models.IntegerField(blank=False)
+    goals_diff = models.IntegerField(blank=False)
+    points = models.IntegerField(blank=False)
     team_logo = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
